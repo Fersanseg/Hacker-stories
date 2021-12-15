@@ -2,7 +2,7 @@ const list = [
   {
     title: 'React',
     url: 'https://reactjs.org/',
-    author: 'Jordan Walke',
+    authors: ['Jordan Walke'],
     num_comments: 3,
     points: 4,
     objectID: 0,
@@ -10,7 +10,7 @@ const list = [
   {
     title: 'Redux',
     url: 'https://redux.js.org/',
-    author: 'Dan Abramov, Andrew Clark',
+    authors: ['Dan Abramov', 'Andrew Clark'],
     num_comments: 2,
     points: 5,
     objectID: 1,
@@ -35,7 +35,11 @@ function App() {
               <span>
                 <a href={item.url}>{item.title}</a>
               </span>
-              <span>{item.author}</span>
+              <ul>
+                {
+                  item.authors.map(author => <li key={author}>{author}</li>)
+                }
+              </ul>
               <span>{item.num_comments}</span>
               <span>{item.points}</span>
             </li>

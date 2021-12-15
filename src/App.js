@@ -17,6 +17,11 @@ const list = [
   },
 ];
 
+const items = [];
+for (const item of list) {
+  items.push(<li key={item.objectID}>{item.title}</li>)
+}
+
 function App() {
 
   return (
@@ -30,9 +35,7 @@ function App() {
 
       <ul>
         {
-          list.map(function (item) {
-            return <li key={item.objectID}>{item.title}</li>
-          })
+          items
         }
       </ul>
 

@@ -1,3 +1,5 @@
+import Item from "./Item";
+
 const list = [
   {
     title: 'React',
@@ -23,18 +25,12 @@ function List() {
       {list.map(function (item) {
         return (
           <li key={item.objectID}>
-            <span>
-              <a href={item.url}>{item.title}</a>
-            </span>
-            <span>{item.author}</span>
-            <span>{item.num_comments}</span>
-            <span>{item.points}</span>
+            <Item item={item} />
           </li>
         );
       })}
     </ul>
   );
 }
-
 
 export default List;

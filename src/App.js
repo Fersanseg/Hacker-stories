@@ -17,11 +17,6 @@ const list = [
   },
 ];
 
-const items = [];
-for (const item of list) {
-  items.push(<li key={item.objectID}>{item.title}</li>)
-}
-
 function App() {
 
   return (
@@ -34,9 +29,18 @@ function App() {
       <hr />
 
       <ul>
-        {
-          items
-        }
+        {list.map(function (item) {
+          return (
+            <li key={item.objectID}>
+              <span>
+                <a href={item.url}>{item.title}</a>
+              </span>
+              <span>{item.author}</span>
+              <span>{item.num_comments}</span>
+              <span>{item.points}</span>
+            </li>
+          );
+        })}
       </ul>
 
     </div>

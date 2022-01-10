@@ -1,10 +1,7 @@
-import { useState } from 'react';
-export default function Search() {
-
-  const [searchTerm, setSearchTerm] = useState('');
+export default function Search(props) {
 
   const handleChange = (event) => {
-    setSearchTerm(event.target.value);
+    props.setSearchTerm(event.target.value);
   };
 
   return (
@@ -13,7 +10,7 @@ export default function Search() {
       <input id="search" type="text" onChange={handleChange}/>
     
       <p>
-        Searching for <strong>{searchTerm}</strong>.
+        Searching for <strong>{props.searchTerm}</strong>.
       </p>
     </>
   );

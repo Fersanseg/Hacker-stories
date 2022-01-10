@@ -1,7 +1,7 @@
-export default function Search(props) {
+export default function Search({ searchTerm, setSearchTerm }) {
 
   const handleChange = (event) => {
-    props.setSearchTerm(event.target.value);
+    setSearchTerm(event.target.value);
   };
 
   return (
@@ -10,7 +10,7 @@ export default function Search(props) {
       <input id="search" type="text" onChange={handleChange}/>
     
       <p>
-        Searching for <strong>{props.searchTerm}</strong>.
+        Searching for <strong>{searchTerm}</strong>.
       </p>
     </>
   );
